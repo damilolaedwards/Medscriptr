@@ -4,8 +4,11 @@ Medscriptr Test Project
 
 ## Getting Started
 Clone or download the project into your pc workspace
+
 From the commandline cd into the project directory
+
 Type the following commands and run in sequence,
+
 ```
 "composer install"
 "composer update"
@@ -13,7 +16,13 @@ Type the following commands and run in sequence,
 "php artisan migrate"
 "php artisan db:seed"
 ```
-then run "php artisan serve" to start up the local server.
+
+then to start up the local server, run the command :
+ ``` 
+ "php artisan serve" 
+
+ ``` 
+
 
 ### Prerequisites
 
