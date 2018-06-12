@@ -17,6 +17,7 @@ class CreateStaffsTable extends Migration
             $table->increments('id');
             $table->string('firstname', 32);
             $table->string('lastname', 32);
+            $table->string('email', 32);
             $table->enum('role', ['Administrator', 'Doctor', 'Nurse']);
             $table->timestamps();
         });

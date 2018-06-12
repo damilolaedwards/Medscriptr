@@ -17,7 +17,7 @@
   <option value="Administrator">Administrator</option>
 </select>  
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Advanced Search</button>
+              <button class="btn btn-primary" type="submit">Search</button>
             </span>
             </div>
 
@@ -51,6 +51,7 @@
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Email</th>
           <th>Role</th>
           <th>Edit </th>
           <th>Delete</th>
@@ -62,6 +63,7 @@
           <th scope="row">{{$staff->id}}</th>
           <td>{{$staff->firstname}}</td>
           <td>{{$staff->lastname}}</td>
+          <td>{{$staff->email}}</td>
           <td>{{$staff->role}}</td>
           <td><a href="{{ route('getedit',['id' => $staff->id]) }}" type="button" class="btn btn-primary btn-sm">Edit</a></td>
           <td><a href="{{ route('delete',['id' => $staff->id]) }}" type="button" class="btn btn-danger btn-sm">Delete</a></td>
@@ -86,10 +88,23 @@
   <div class="form-group {{ $errors->has('firstname') ?  ' has-error' : '' }}">
     <label for="firstname">First Name</label>
     <input type="text" class="form-control" name="firstname" value="{{ Request::old('firstname') ?: ''}}" id="firstname" placeholder="First Name">
+    @if($errors->has('firstname'))
+              <span class="help-block">{{$errors->first('firstname')}}</span>
+              @endif
   </div>
   <div class="form-group {{ $errors->has('lastname') ?  ' has-error' : '' }}">
     <label for="lastname">Last Name</label>
     <input type="text" class="form-control" name="lastname" value="{{ Request::old('lastname') ?: ''}}" id="lastname" placeholder="Last Name">
+    @if($errors->has('lastname'))
+              <span class="help-block">{{$errors->first('lastname')}}</span>
+              @endif
+  </div>
+  <div class="form-group {{ $errors->has('email') ?  ' has-error' : '' }}">
+    <label for="lastname">Email</label>
+    <input type="email" class="form-control" name="email" value="{{ Request::old('email') ?: ''}}" id="email" placeholder="Email">
+     @if($errors->has('email'))
+              <span class="help-block">{{$errors->first('email')}}</span>
+              @endif
   </div>
   <input type="hidden" name="_token" value="{{Session::token()}}">
   <label for="role">Role</label>
@@ -98,7 +113,10 @@
   <option value="Doctor" @if (Request::old('role') == 'Doctor') selected="selected" @endif >Doctor</option>
   <option value="Nurse" @if (Request::old('role') == 'Nurse') selected="selected" @endif >Nurse</option>
   <option value="Administrator"  @if (Request::old('role') == 'Administrator') selected="selected" @endif >Administrator</option>
-</select>  
+</select>
+@if($errors->has('role'))
+              <span class="help-block">{{$errors->first('role')}}</span>
+              @endif  
   </div>
   <button type="submit" class="btn btn-success pull-right">Submit</button>
  </form>

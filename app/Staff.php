@@ -8,5 +8,5 @@ class Staff extends Model
 {
     protected $table = 'staffs';
 
-    protected $fillable = ['firstname', 'lastname', 'role'];
+    protected $fillable = ['firstname', 'lastname','email', 'role'];
 }

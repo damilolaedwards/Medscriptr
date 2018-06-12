@@ -17,6 +17,7 @@
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Email</th>
           <th>Role</th>
         </tr>
       </thead>
@@ -26,6 +27,7 @@
           <th scope="row">{{$staff->id}}</th>
           <td>{{$staff->firstname}}</td>
           <td>{{$staff->lastname}}</td>
+          <td>{{$staff->email}}</td>
           <td>{{$staff->role}}</td>
         </tr>
         @endforeach

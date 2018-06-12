@@ -23,6 +23,7 @@ class StaffController extends Controller
         
         	'firstname' => 'required|string|max:32',
         	'lastname'  => 'required|string|max:32',
+        	'email'  => 'required|email|max:32',
         	'role' => 'required|in:Doctor,Nurse,Administrator',
 			]);
 
@@ -30,6 +31,7 @@ class StaffController extends Controller
     [
     	'firstname' => $request->input('firstname'), 
         'lastname' => $request->input('lastname'),
+        'email' => $request->input('email'),
         'role' => $request->input('role')
     ]);
 
@@ -50,6 +52,7 @@ class StaffController extends Controller
         
         	'firstname' => 'required|string|max:32',
         	'lastname'  => 'required|string|max:32',
+        	'email'  => 'required|email|max:32',
         	'role' => 'required|in:Doctor,Nurse,Administrator',
 			]);
 
@@ -57,6 +60,7 @@ class StaffController extends Controller
             ->update([
             	'firstname' => $request->input('firstname'), 
 		        'lastname' => $request->input('lastname'),
+		        'email' => $request->input('email'),
 		        'role' => $request->input('role')
 		    ]);
 
