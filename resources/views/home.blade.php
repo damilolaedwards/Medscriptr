@@ -17,7 +17,7 @@
   <option value="Administrator">Administrator</option>
 </select>  
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Search</button>
+              <button class="btn btn-default" type="submit">Advanced Search</button>
             </span>
             </div>
 
