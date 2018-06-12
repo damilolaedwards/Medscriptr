@@ -5,7 +5,7 @@ Medscriptr Test Project
 ## Getting Started
 Clone or download the project into your pc workspace
 
-From the commandline cd into the project directory
+From the commandline, cd into the project directory
 
 Type the following commands and run in sequence,
 
@@ -43,7 +43,7 @@ Click on the "Admin" link to access the admin area
 Login Credentials 
 
 ```
-Email : admin@medscriptr.org
+Email : admin@medscriptr.com
 
 password : 123456
 ```
