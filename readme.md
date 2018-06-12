@@ -57,7 +57,7 @@ and Nurse)
 2) Search and display results any staff, by any of the 4 criteria mentioned above
 (first name, last name, email or role) using the quick filter search box.
 
-3) Ability to only view staffs in each respective role using the advanced search box. 
+3) Ability to only view staffs in each respective role using the search box. 
 
 4) Ability to view all created staffs in a tabular responsive format 
 
