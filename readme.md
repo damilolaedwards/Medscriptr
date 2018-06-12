@@ -2,6 +2,15 @@
 
 Medscriptr Test Project
 
+### Prerequisites
+
+
+```
+PHP 5.6+
+Composer
+```
+
+
 ## Getting Started
 Clone or download the project into your pc workspace
 
@@ -9,13 +18,43 @@ From the commandline, cd into the project directory
 
 Type the following commands and run in sequence,
 
+
+
 ```
 "composer install"
 "composer update"
 "composer dump-autoload -o"
+
+```
+
+
+### Database
+
+Create a new database
+
+Create a file named .env at the root directory
+
+Copy the contents of the .env.example file into the newly created .env file
+
+Edit the content of the .env file as follows
+
+```
+
+DB_DATABASE=[your_database_name]
+DB_USERNAME=[your_mysql_username]
+DB_PASSWORD=[your_mysql_password]
+
+
+```
+
+Then at your commandline, run the following commands
+
+```
 "php artisan migrate"
 "php artisan db:seed"
+
 ```
+
 
 then to start up the local server, run the command :
  ``` 
@@ -24,13 +63,7 @@ then to start up the local server, run the command :
  ``` 
 
 
-### Prerequisites
 
-
-```
-PHP 5.6+
-Composer
-```
 
 ### Usage
 
