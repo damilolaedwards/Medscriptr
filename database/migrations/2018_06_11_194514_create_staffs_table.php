@@ -18,7 +18,8 @@ class CreateStaffsTable extends Migration
             $table->string('firstname', 32);
             $table->string('lastname', 32);
             $table->string('email', 32);
-            $table->enum('role', ['Administrator', 'Doctor', 'Nurse']);
+            $table->integer('role_id')->unsigned();
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->timestamps();
         });
     }

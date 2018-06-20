@@ -43,17 +43,17 @@
   </div>
   <input type="hidden" name="_token" value="{{Session::token()}}">
   
-  <div class="form-group {{ $errors->has('role') ?  ' has-error' : '' }}">
-  	<label for="Role" class="col-sm-2 control-label">Role</label>
+  <div class="form-group {{ $errors->has('role_id') ?  ' has-error' : '' }}">
+  	<label for="role_id" class="col-sm-2 control-label">Role</label>
   	<div class="col-sm-10">
-  <select class="form-control" name="role">
-  <option value="Doctor" @if ($staff->role == 'Doctor') selected="selected" @endif >Doctor</option>
-  <option value="Nurse" @if ($staff->role == 'Nurse') selected="selected" @endif> Nurse</option>
-  <option value="Administrator" @if ($staff->role == 'Administrator') selected="selected" @endif >Administrator</option>
+  <select class="form-control" name="role_id">
+  <option value="1" @if ($staff->role_id == '1') selected="selected" @endif >Doctor</option>
+  <option value="2" @if ($staff->role_id == '2') selected="selected" @endif> Nurse</option>
+  <option value="3" @if ($staff->role_id == '3') selected="selected" @endif >Administrator</option>
 </select>  
   	</div>
-    @if($errors->has('role'))
-              <span class="help-block">{{$errors->first('role')}}</span>
+    @if($errors->has('role_id'))
+              <span class="help-block">{{$errors->first('role_id')}}</span>
               @endif
   </div>
   

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-<a href="{{URL::previous()}}" type="button" class="btn btn-primary pull-left" >
+<a href="{{url('/home')}}" type="button" class="btn btn-primary pull-left" >
   Go Back
 </a>
 <br>
@@ -28,7 +28,7 @@
           <td>{{$staff->firstname}}</td>
           <td>{{$staff->lastname}}</td>
           <td>{{$staff->email}}</td>
-          <td>{{$staff->role}}</td>
+          <td>{{\App\Role::find($staff->role_id)->name}}</td>
         </tr>
         @endforeach
       </tbody>

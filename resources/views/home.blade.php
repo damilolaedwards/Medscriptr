@@ -12,9 +12,9 @@
         <form class="form-inline" action="{{route('search')}}">
         <div class="input-group">
             <select class="form-control" name="query">
-  <option value="Doctor">Doctor</option>
-  <option value="Nurse">Nurse</option>
-  <option value="Administrator">Administrator</option>
+  <option value="1">Doctor</option>
+  <option value="2">Nurse</option>
+  <option value="3">Administrator</option>
 </select>  
             <span class="input-group-btn">
               <button class="btn btn-primary" type="submit">Search</button>
@@ -64,7 +64,7 @@
           <td>{{$staff->firstname}}</td>
           <td>{{$staff->lastname}}</td>
           <td>{{$staff->email}}</td>
-          <td>{{$staff->role}}</td>
+          <td>{{\App\Role::find($staff->role_id)->name}}</td>
           <td><a href="{{ route('getedit',['id' => $staff->id]) }}" type="button" class="btn btn-primary btn-sm">Edit</a></td>
           <td><a href="{{ route('delete',['id' => $staff->id]) }}" type="button" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>
@@ -107,15 +107,15 @@
               @endif
   </div>
   <input type="hidden" name="_token" value="{{Session::token()}}">
-  <label for="role">Role</label>
-  <div class="form-group {{ $errors->has('role') ?  ' has-error' : '' }}">
-    <select class="form-control" name="role">
-  <option value="Doctor" @if (Request::old('role') == 'Doctor') selected="selected" @endif >Doctor</option>
-  <option value="Nurse" @if (Request::old('role') == 'Nurse') selected="selected" @endif >Nurse</option>
-  <option value="Administrator"  @if (Request::old('role') == 'Administrator') selected="selected" @endif >Administrator</option>
+  <label for="role_id">Role</label>
+  <div class="form-group {{ $errors->has('role_id') ?  ' has-error' : '' }}">
+    <select class="form-control" name="role_id">
+  <option value="1" @if (Request::old('role_id') == '1') selected="selected" @endif >Doctor</option>
+  <option value="2" @if (Request::old('role_id') == '2') selected="selected" @endif >Nurse</option>
+  <option value="3"  @if (Request::old('role_id') == '3') selected="selected" @endif >Administrator</option>
 </select>
 @if($errors->has('role'))
-              <span class="help-block">{{$errors->first('role')}}</span>
+              <span class="help-block">{{$errors->first('role_id')}}</span>
               @endif  
   </div>
   <button type="submit" class="btn btn-success pull-right">Submit</button>
