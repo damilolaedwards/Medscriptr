@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use \App\Staff;
+use \App\Http\Requests\StaffRequest;
 use Illuminate\Http\Request;
-use \App\Http\Requests\CreateStaffRequest;
-use \App\Http\Requests\EditStaffRequest;
+
+
 
 class StaffController extends Controller
 {
@@ -21,7 +22,7 @@ class StaffController extends Controller
 		return view('search')->with('staffs', $staffs); 
 	}
 
-    public function addNew(CreateStaffRequest $request){
+    public function addNew(StaffRequest $request){
     	
         Staff::create($request->all());
 
@@ -36,7 +37,7 @@ class StaffController extends Controller
     	return view('edit', ['staff' => $staff]);
     }
 
-    public function postEdit(EditStaffRequest $request, $id){
+    public function postEdit(StaffRequest $request, $id){
 
     	Staff::where('id', $id)->update($request->except('_token'));
 

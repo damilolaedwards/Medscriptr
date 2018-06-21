@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditStaffRequest extends FormRequest
+class StaffRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,3 +31,7 @@ class EditStaffRequest extends FormRequest
         ];
     }
 }
+
+
+
+
